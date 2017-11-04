@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Hello, #{user.name}!
+  p You are authenticated with Ingest!
+
+  p Here is a list of your videos:
+  ul
+    each video in videos
+      li
+        a(href="/video/#{video.id}", title="#{video.title}")
+          div= video.title
+          img(src="#{video.poster.thumbnail_url}", width=300)
